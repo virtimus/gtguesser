@@ -60,30 +60,30 @@ Install it using "npm install -g bower". Depending on your system you might have
 Simply do
 
     git clone https://github.com/virtimus/gtguesser.git
-    cd guesser
+    cd gtguesser
     git checkout step1
     
-------- inprogress
 
-This will create a directory `guesser` in your current directory and will checkout the state after Step 1, you will only see a license file and a `README.md`.
+
+This will create a directory `gtguesser` in your current directory and will checkout the state after Step 1, you will only see a license file and a `README.md`.
 
 <a name="Two"></a>
 
 ### 2\. Install application dependencies
 
-To create the io.js backend application
+To create the nodejs backend application
 
-    mkdir iojs
-    cd iojs
+    mkdir nodejs
+    cd nodejs
     npm init -y
-    npm install --save express arangojs promise concat-stream
+    npm install --save express orientjs promise concat-stream
     mkdir static
     
 The node package manager (npm) needs a file called `package.json` to work. This file is used to describe the project and its dependencies. We are using npms defaults during init to get the project running as quickly as possible. Have a look at [npm's documentation][11] for an in-depth explanation of the package format.
 
-The install command downloaded all necessary dependencies to develop a base io.js web application which uses arangodb as a database.
+The install command downloaded all necessary dependencies to develop a base nodejs web application which uses orangedb as a database.
 
-We will put static content served by our io.js app in the `static` folder.
+We will put static content served by our nodejs app in the `static` folder.
 
 To manage our frontend dependencies we will be using bower.
 
@@ -92,18 +92,18 @@ Just as npm it has its own package format (on which we won't go into detail here
 Execute
     
     cd static
-    bower init
+    bower init (--allow-root)
 
 This will create a bower.json package file in the static directory. For now don't bother about the details and simply press enter during the init wizard process. You should however check out [bowers documentation later][12].
 
 To install AngularJS using bower execute:
 
-    bower install --save angularjs
+    bower install --save angularjs (--allow-root)
 
 This will create a directory "bower_components" and angularjs should be installed there.
 
-    git checkout step2
-    
+--    git checkout step2
+------- inprogress    
 to see the state of our project after this step. Note that if you actually performed the commands in this step, then the `git checkout step2` will complain that it cannot overwrite some files. Simply delete them and do the `git checkout step2` again.
 
 <a name="Three"></a>
@@ -112,17 +112,17 @@ to see the state of our project after this step. Note that if you actually perfo
 
 We are now in a position to create a minimal web server serving some static content showing a welcome view. To this end, we create the files
 
-    iojs/guesser_server.js
-    iojs/static/index.html
-    iojs/static/base.css
-    iojs/static/guesser_controller.js
+    nodejs/gtguesser_server.js
+    nodejs/static/index.html
+    nodejs/static/base.css
+    nodejs/static/gtguesser_controller.js
     
 
 The guesser server is an io.js application using the `express` package to serve some static pages for now. See the [AngularJS][13] and [express][14] manuals for explanations. Here it shall suffice to say that the file `index.html` contains the HTML for the single page, it includes the CSS style sheet `base.css`, the AngularJS library file `angular.min.js` and the controller file `guesser_controller.js`. The latter contains the JavaScript code that is executed in the web browser to take care of the actual user interface, and later to perform AJAX calls back to the io.js server.
 
 Use
 
-    git checkout step3
+--    git checkout step3
     
 
 to see the state of our project after this step. After this, you can simply execute
