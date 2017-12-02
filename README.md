@@ -103,7 +103,7 @@ To install AngularJS using bower execute:
 This will create a directory "bower_components" and angularjs should be installed there.
 
 --    git checkout step2
-------- inprogress    
+   
 to see the state of our project after this step. Note that if you actually performed the commands in this step, then the `git checkout step2` will complain that it cannot overwrite some files. Simply delete them and do the `git checkout step2` again.
 
 <a name="Three"></a>
@@ -122,14 +122,17 @@ The guesser server is an io.js application using the `express` package to serve 
 
 Use
 
---    git checkout step3
-    
+--    git checkout step3 
+git checkout s3
+ 
 
 to see the state of our project after this step. After this, you can simply execute
 
-    cd iojs
-    iojs guesser_server.js
+    cd nodejs
+    node gtguesser_server.js
     
+You may need 
+firewall-cmd --permanent --add-port=8000/tcp/firewall-cmd --reload
 
 to start a web server on `port 8000` of your local machine. If you visit
 
@@ -159,11 +162,14 @@ The HTML page is a standard one with a few AngularJS directives, the AngularJS c
 
 <a name="Four"></a>
 
-### 4\. Install ArangoDB and set up a place for Foxx app development
 
-Download and install ArangoDB as described on the page
 
-<https://www.arangodb.com/download>
+### 4\. Install OrientDB and set up a place for Foxx app development
+
+Download and install OrientDB as described on the page
+
+--- <https://www.arangodb.com/download>
+https://orientdb.com/docs/2.1/Tutorial-Installation.html
 
 To setup a place to develop a Foxx app, simply create a directory hierarchy like the following anywhere in you file system:
 
@@ -172,11 +178,11 @@ To setup a place to develop a Foxx app, simply create a directory hierarchy like
     mkdir -p databases/_system
     
 
-and either put the `guesser` repository in the `_system` folder or create a symbolic link by
+and either put the `gtguesser` repository in the `_system` folder or create a symbolic link by
 
-    ln -s <PATH_TO_guesser_DIR> <PATH_TO_YOUR_apps_DIR>/databases/_system/guesser
+    ln -s <PATH_TO_gtguesser_DIR> <PATH_TO_YOUR_apps_DIR>/databases/_system/gtguesser
     
-
+    ------- inprogress
 Finally, edit the ArangoDB configuration file `arangod.conf` (which usually resides in `/etc/arangodb/arangod.conf`) and add a line
 
     dev-app-path = <PATH_TO_YOUR_apps_DIR>
