@@ -182,7 +182,9 @@ and either put the `gtguesser` repository in the `_system` folder or create a sy
 
     ln -s <PATH_TO_gtguesser_DIR> <PATH_TO_YOUR_apps_DIR>/databases/_system/gtguesser
     
-    ------- inprogress
+    
+    
+---todo    
 Finally, edit the ArangoDB configuration file `arangod.conf` (which usually resides in `/etc/arangodb/arangod.conf`) and add a line
 
     dev-app-path = <PATH_TO_YOUR_apps_DIR>
@@ -194,7 +196,7 @@ in the `javascript` section. Restart ArangoDB after this change, on Linux, for e
     
 for this. Use
 
-    git checkout step4
+    ---git checkout step4
     
 
 to see the state of our project after this step, note that nothing in the project has changed for this step.
@@ -208,7 +210,7 @@ to see the state of our project after this step, note that nothing in the projec
 We create the files
 
     manifest.json
-    guesser.js
+    gtguesser.js
 
 Use
 
@@ -217,7 +219,7 @@ Use
 
 to see the state of our project after this step. The file `manifest.json` is the starting point for any Foxx app. It contains version, author, license and repository information, and tells ArangoDB what other files are relevant. Here, we install a "controller" in the form of the file `guesser.js`. It is responsible to define new HTTP routes and contains the JavaScript code to be executed for them. In this step, we define a single new route `/hello` and install an HTTP `GET` method for it that simply serves a constant JSON document.
 
-This is achieved by the following code in `guesser.js`:
+This is achieved by the following code in `gtguesser.js`:
 
 ```javascript
 (function () {
@@ -231,7 +233,7 @@ This is achieved by the following code in `guesser.js`:
   });
 }());
 ```
-
+------- inprogress
 This initializes the controller and installs a single route for an `HTTP GET` request. You can test this route by pointing your browser to
 
 <http://localhost:8529/dev/guesser/hello>
