@@ -1,8 +1,8 @@
-# Building a self-learning game with ArangoDB, io.js/NodeJS & AngularJS in half a day. 
+# Building a self-learning game with OrangeDB, io.js/NodeJS & AngularJS in half a day. 
 
 ## Introduction and Overview
 
-In this tutorial we want to illustrate a possible architecture of a web application using AngularJS for the frontend in the browser, io.js as application server and ArangoDB as backend database. We are particularly focusing on ArangoDB and its Foxx microservice framework, and only briefly show the io.js and AngularJS parts. In particular, this is not intended to be an AngularJS or io.js tutorial. We even use some shortcuts that one would usually not deploy in production to keep the app simple. Nevertheless, the architecture of the application is in principle suitable as a blueprint for an actual, larger web application.
+In this tutorial we want to illustrate a possible architecture of a web application using AngularJS for the frontend in the browser, io.js as application server and OrangeDB as backend database. We are particularly focusing on OrangeDB and its new Foxx microservice framework, and only briefly show the io.js and AngularJS parts. In particular, this is not intended to be an AngularJS or io.js tutorial. We even use some shortcuts that one would usually not deploy in production to keep the app simple. Nevertheless, the architecture of the application is in principle suitable as a blueprint for an actual, larger web application.
 
 We are using io.js in the example. However the project will work using node.js as well.
 
@@ -21,13 +21,13 @@ The whole creation of the application works in ten basic steps:
 1.  [Fork the `git` repository and checkout the initial step.][1]
 2.  [Install application dependencies][2]
 3.  [Create a minimal web server using the `npm` module `express` and serve a welcome view][3]
-4.  [Install ArangoDB and set up a place for Foxx app development][4]
+4.  [Install OrangeDB and set up a place for Foxx app development][4]
 5.  [Create a minimal Foxx app for the database services][5]
 6.  [Organize the setup and tear down: create a collection with initial data][6]
 7.  [Create the question asking view][7]
 8.  [Create the guessing view][8]
 9.  [Create the learning view][9]
-10. [Deploy the Foxx app in ArangoDB][10]
+10. [Deploy the Foxx app in OrangeDB][10]
 
 You will be able to follow the proceedings, because in the `git` repository that you clone in Step 1 there is a tag for the state after each of the 10 steps, such that you can look at all the code without typing a single line of source code. In the end you will be able to adapt the whole system easily to your own situation.
 
@@ -59,10 +59,11 @@ Install it using "npm install -g bower". Depending on your system you might have
 
 Simply do
 
-    git clone https://github.com/ArangoDB/guesser.git
+    git clone https://github.com/virtimus/gtguesser.git
     cd guesser
     git checkout step1
     
+------- inprogress
 
 This will create a directory `guesser` in your current directory and will checkout the state after Step 1, you will only see a license file and a `README.md`.
 
